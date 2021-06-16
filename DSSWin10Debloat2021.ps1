@@ -1,3 +1,16 @@
+    # <=== COLORS ===>
+
+    $Black              = "#000000"
+    $DarkGray           = "#111111"
+    $Green              = "#1fff00"
+    $Red                = "#EC1616"
+    $LightBlue          = "#00ffff"
+    $LightGray          = "#eeeeee"
+    $White              = "#ffffff"
+    $WinBlue            = "#2376bc"
+    $WinDark            = "#252525"
+    $WinGray            = "#e6e6e6"
+
 Add-Type -AssemblyName System.Windows.Forms
 [System.Windows.Forms.Application]::EnableVisualStyles()
 
@@ -27,9 +40,10 @@ If (!([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]:
 }
 
 $Form                            = New-Object system.Windows.Forms.Form
-$Form.ClientSize                 = New-Object System.Drawing.Point(1200,700)
+$Form.ClientSize                 = New-Object System.Drawing.Point(1200,750)
 $Form.text                       = "DSS Application Installer"
 $Form.TopMost                    = $false
+$Form.BackColor                  = [System.Drawing.ColorTranslator]::FromHtml("$WinDark")
 
 $Panel1                          = New-Object system.Windows.Forms.Panel
 $Panel1.height                   = 156
@@ -37,12 +51,13 @@ $Panel1.width                    = 1080
 $Panel1.location                 = New-Object System.Drawing.Point(9,90)
 
 $Label1                          = New-Object system.Windows.Forms.Label
-$Label1.text                     = "Program Installation"
+$Label1.text                     = "SOFTWARE INSTALLATION:"
 $Label1.AutoSize                 = $true
 $Label1.width                    = 25
 $Label1.height                   = 10
 $Label1.location                 = New-Object System.Drawing.Point(10,30)
 $Label1.Font                     = New-Object System.Drawing.Font('Calibri',30)
+$Label1.ForeColor                = [System.Drawing.ColorTranslator]::FromHtml("$Red") # Red
 
 $installchoco                    = New-Object system.Windows.Forms.Button
 $installchoco.text               = "Install Chocolatey"
@@ -50,6 +65,7 @@ $installchoco.width              = 200
 $installchoco.height             = 115
 $installchoco.location           = New-Object System.Drawing.Point(16,19)
 $installchoco.Font               = New-Object System.Drawing.Font('Microsoft Sans Serif',16)
+$installchoco.ForeColor          = [System.Drawing.ColorTranslator]::FromHtml("$White") # White
 
 $brave                           = New-Object system.Windows.Forms.Button
 $brave.text                      = "Brave Browser"
@@ -57,6 +73,7 @@ $brave.width                     = 150
 $brave.height                    = 30
 $brave.location                  = New-Object System.Drawing.Point(250,19)
 $brave.Font                      = New-Object System.Drawing.Font('Microsoft Sans Serif',12)
+$brave.ForeColor                 = [System.Drawing.ColorTranslator]::FromHtml("$White") # White
 
 $firefox                         = New-Object system.Windows.Forms.Button
 $firefox.text                    = "Firefox"
@@ -64,6 +81,7 @@ $firefox.width                   = 150
 $firefox.height                  = 30
 $firefox.location                = New-Object System.Drawing.Point(250,61)
 $firefox.Font                    = New-Object System.Drawing.Font('Microsoft Sans Serif',12)
+$firefox.ForeColor               = [System.Drawing.ColorTranslator]::FromHtml("$White") # White
 
 $7zip                            = New-Object system.Windows.Forms.Button
 $7zip.text                       = "7-Zip"
@@ -71,6 +89,7 @@ $7zip.width                      = 150
 $7zip.height                     = 30
 $7zip.location                   = New-Object System.Drawing.Point(584,104)
 $7zip.Font                       = New-Object System.Drawing.Font('Microsoft Sans Serif',12)
+$7zip.ForeColor                  = [System.Drawing.ColorTranslator]::FromHtml("$White") # White
 
 $zoom                            = New-Object system.Windows.Forms.Button
 $zoom.text                       = "Zoom"
@@ -78,6 +97,7 @@ $zoom.width                      = 150
 $zoom.height                     = 30
 $zoom.location                   = New-Object System.Drawing.Point(417,19)
 $zoom.Font                       = New-Object System.Drawing.Font('Microsoft Sans Serif',12)
+$zoom.ForeColor                  = [System.Drawing.ColorTranslator]::FromHtml("$White") # White
 
 $adobereader                     = New-Object system.Windows.Forms.Button
 $adobereader.text                = "Adobe Reader DC"
@@ -85,6 +105,7 @@ $adobereader.width               = 150
 $adobereader.height              = 30
 $adobereader.location            = New-Object System.Drawing.Point(417,61)
 $adobereader.Font                = New-Object System.Drawing.Font('Microsoft Sans Serif',12)
+$adobereader.ForeColor           = [System.Drawing.ColorTranslator]::FromHtml("$White") # White
 
 $notepad                         = New-Object system.Windows.Forms.Button
 $notepad.text                    = "Notepad++"
@@ -92,6 +113,7 @@ $notepad.width                   = 150
 $notepad.height                  = 30
 $notepad.location                = New-Object System.Drawing.Point(417,104)
 $notepad.Font                    = New-Object System.Drawing.Font('Microsoft Sans Serif',12)
+$notepad.ForeColor               = [System.Drawing.ColorTranslator]::FromHtml("$White") # White
 
 $gchrome                         = New-Object system.Windows.Forms.Button
 $gchrome.text                    = "Google Chrome"
@@ -99,6 +121,7 @@ $gchrome.width                   = 150
 $gchrome.height                  = 30
 $gchrome.location                = New-Object System.Drawing.Point(250,104)
 $gchrome.Font                    = New-Object System.Drawing.Font('Microsoft Sans Serif',12)
+$gchrome.ForeColor               = [System.Drawing.ColorTranslator]::FromHtml("$White") # White
 
 $mpc                             = New-Object system.Windows.Forms.Button
 $mpc.text                        = "Media Player Classic"
@@ -106,6 +129,7 @@ $mpc.width                       = 150
 $mpc.height                      = 30
 $mpc.location                    = New-Object System.Drawing.Point(584,61)
 $mpc.Font                        = New-Object System.Drawing.Font('Microsoft Sans Serif',12)
+$mpc.ForeColor                   = [System.Drawing.ColorTranslator]::FromHtml("$White") # White
 
 $vlc                             = New-Object system.Windows.Forms.Button
 $vlc.text                        = "VLC"
@@ -113,6 +137,7 @@ $vlc.width                       = 150
 $vlc.height                      = 30
 $vlc.location                    = New-Object System.Drawing.Point(584,19)
 $vlc.Font                        = New-Object System.Drawing.Font('Microsoft Sans Serif',12)
+$vlc.ForeColor                   = [System.Drawing.ColorTranslator]::FromHtml("$White") # White
 
 $powertoys                       = New-Object system.Windows.Forms.Button
 $powertoys.text                  = "PowerToys"
@@ -120,6 +145,7 @@ $powertoys.width                 = 150
 $powertoys.height                = 30
 $powertoys.location              = New-Object System.Drawing.Point(751,105)
 $powertoys.Font                  = New-Object System.Drawing.Font('Microsoft Sans Serif',12)
+$powertoys.ForeColor             = [System.Drawing.ColorTranslator]::FromHtml("$White") # White
 
 $winterminal                     = New-Object system.Windows.Forms.Button
 $winterminal.text                = "Windows Terminal"
@@ -127,6 +153,7 @@ $winterminal.width               = 150
 $winterminal.height              = 30
 $winterminal.location            = New-Object System.Drawing.Point(751,61)
 $winterminal.Font                = New-Object System.Drawing.Font('Microsoft Sans Serif',12)
+$winterminal.ForeColor           = [System.Drawing.ColorTranslator]::FromHtml("$White") # White
 
 $vscode                          = New-Object system.Windows.Forms.Button
 $vscode.text                     = "VS Code"
@@ -134,6 +161,7 @@ $vscode.width                    = 150
 $vscode.height                   = 30
 $vscode.location                 = New-Object System.Drawing.Point(751,19)
 $vscode.Font                     = New-Object System.Drawing.Font('Microsoft Sans Serif',12)
+$vscode.ForeColor                = [System.Drawing.ColorTranslator]::FromHtml("$White") # White
 
 $malwarebytes                    = New-Object system.Windows.Forms.Button
 $malwarebytes.text               = "Malwarebytes"
@@ -141,20 +169,23 @@ $malwarebytes.width              = 150
 $malwarebytes.height             = 30
 $malwarebytes.location           = New-Object System.Drawing.Point(920,19)
 $malwarebytes.Font               = New-Object System.Drawing.Font('Microsoft Sans Serif',12)
+$malwarebytes.ForeColor          = [System.Drawing.ColorTranslator]::FromHtml("$White") # White
 
-$office365                      = New-Object system.Windows.Forms.Button
-$office365.text                 = "Office365Business"
-$office365.width                = 155
-$office365.height               = 30
-$office365.location             = New-Object System.Drawing.Point(920,61)
-$office365.Font                 = New-Object System.Drawing.Font('Microsoft Sans Serif',12)
+$office365                       = New-Object system.Windows.Forms.Button
+$office365.text                  = "Office365Business"
+$office365.width                 = 155
+$office365.height                = 30
+$office365.location              = New-Object System.Drawing.Point(920,61)
+$office365.Font                  = New-Object System.Drawing.Font('Microsoft Sans Serif',12)
+$office365.ForeColor             = [System.Drawing.ColorTranslator]::FromHtml("$White") # White
 
-$openoffice                     = New-Object system.Windows.Forms.Button
+$openoffice                      = New-Object system.Windows.Forms.Button
 $openoffice.text                 = "Open Office"
 $openoffice.width                = 155
 $openoffice.height               = 30
 $openoffice.location             = New-Object System.Drawing.Point(920,105)
 $openoffice.Font                 = New-Object System.Drawing.Font('Microsoft Sans Serif',12)
+$openoffice.ForeColor            = [System.Drawing.ColorTranslator]::FromHtml("$White") # White
 
 $Label2                          = New-Object system.Windows.Forms.Label
 $Label2.text                     = "(Chocolatey Required for installs)"
@@ -163,19 +194,22 @@ $Label2.width                    = 25
 $Label2.height                   = 10
 $Label2.location                 = New-Object System.Drawing.Point(478,3)
 $Label2.Font                     = New-Object System.Drawing.Font('Microsoft Sans Serif',10)
+$Label2.ForeColor                = [System.Drawing.ColorTranslator]::FromHtml("$White") # White
 
 $Panel2                          = New-Object system.Windows.Forms.Panel
 $Panel2.height                   = 159
 $Panel2.width                    = 588
 $Panel2.location                 = New-Object System.Drawing.Point(9,293)
+$Panel2.ForeColor                = [System.Drawing.ColorTranslator]::FromHtml("$White") # White
 
 $Label3                          = New-Object system.Windows.Forms.Label
-$Label3.text                     = "System Tweaks"
+$Label3.text                     = "SYSTEM TWEAKS:"
 $Label3.AutoSize                 = $true
 $Label3.width                    = 230
 $Label3.height                   = 25
 $Label3.location                 = New-Object System.Drawing.Point(195,251)
 $Label3.Font                     = New-Object System.Drawing.Font('Calibri',24)
+$Label3.ForeColor                = [System.Drawing.ColorTranslator]::FromHtml("$Red") # Red
 
 $essentialtweaks                 = New-Object system.Windows.Forms.Button
 $essentialtweaks.text            = "Essential Tweaks"
@@ -183,6 +217,7 @@ $essentialtweaks.width           = 200
 $essentialtweaks.height          = 115
 $essentialtweaks.location        = New-Object System.Drawing.Point(24,34)
 $essentialtweaks.Font            = New-Object System.Drawing.Font('Calibri',14)
+$essentialtweaks.ForeColor       = [System.Drawing.ColorTranslator]::FromHtml("$White") # White
 
 $backgroundapps                  = New-Object system.Windows.Forms.Button
 $backgroundapps.text             = "Background Apps"
@@ -190,6 +225,7 @@ $backgroundapps.width            = 150
 $backgroundapps.height           = 30
 $backgroundapps.location         = New-Object System.Drawing.Point(251,45)
 $backgroundapps.Font             = New-Object System.Drawing.Font('Microsoft Sans Serif',12)
+$backgroundapps.ForeColor        = [System.Drawing.ColorTranslator]::FromHtml("$White") # White
 
 $cortana                         = New-Object system.Windows.Forms.Button
 $cortana.text                    = "Cortana"
@@ -197,6 +233,7 @@ $cortana.width                   = 150
 $cortana.height                  = 30
 $cortana.location                = New-Object System.Drawing.Point(251,82)
 $cortana.Font                    = New-Object System.Drawing.Font('Microsoft Sans Serif',12)
+$cortana.ForeColor               = [System.Drawing.ColorTranslator]::FromHtml("$White") # White
 
 $windowssearch                   = New-Object system.Windows.Forms.Button
 $windowssearch.text              = "Windows Search"
@@ -204,6 +241,7 @@ $windowssearch.width             = 150
 $windowssearch.height            = 30
 $windowssearch.location          = New-Object System.Drawing.Point(417,119)
 $windowssearch.Font              = New-Object System.Drawing.Font('Microsoft Sans Serif',12)
+$windowssearch.ForeColor         = [System.Drawing.ColorTranslator]::FromHtml("$White") # White
 
 $actioncenter                    = New-Object system.Windows.Forms.Button
 $actioncenter.text               = "Action Center"
@@ -211,6 +249,7 @@ $actioncenter.width              = 150
 $actioncenter.height             = 30
 $actioncenter.location           = New-Object System.Drawing.Point(251,9)
 $actioncenter.Font               = New-Object System.Drawing.Font('Microsoft Sans Serif',12)
+$actioncenter.ForeColor          = [System.Drawing.ColorTranslator]::FromHtml("$White") # White
 
 $darkmode                        = New-Object system.Windows.Forms.Button
 $darkmode.text                   = "Dark Mode"
@@ -218,6 +257,7 @@ $darkmode.width                  = 150
 $darkmode.height                 = 30
 $darkmode.location               = New-Object System.Drawing.Point(417,7)
 $darkmode.Font                   = New-Object System.Drawing.Font('Microsoft Sans Serif',12)
+$darkmode.ForeColor              = [System.Drawing.ColorTranslator]::FromHtml("$White") # White
 
 $visualfx                        = New-Object system.Windows.Forms.Button
 $visualfx.text                   = "Visual FX"
@@ -225,6 +265,7 @@ $visualfx.width                  = 150
 $visualfx.height                 = 30
 $visualfx.location               = New-Object System.Drawing.Point(417,82)
 $visualfx.Font                   = New-Object System.Drawing.Font('Microsoft Sans Serif',12)
+$visualfx.ForeColor              = [System.Drawing.ColorTranslator]::FromHtml("$White") # White
 
 $onedrive                        = New-Object system.Windows.Forms.Button
 $onedrive.text                   = "OneDrive"
@@ -232,6 +273,7 @@ $onedrive.width                  = 150
 $onedrive.height                 = 30
 $onedrive.location               = New-Object System.Drawing.Point(251,119)
 $onedrive.Font                   = New-Object System.Drawing.Font('Microsoft Sans Serif',12)
+$onedrive.ForeColor              = [System.Drawing.ColorTranslator]::FromHtml("$White") # White
 
 $Panel3                          = New-Object system.Windows.Forms.Panel
 $Panel3.height                   = 158
@@ -239,12 +281,13 @@ $Panel3.width                    = 440
 $Panel3.location                 = New-Object System.Drawing.Point(601,293)
 
 $Label4                          = New-Object system.Windows.Forms.Label
-$Label4.text                     = "Security"
+$Label4.text                     = "SECURITY:"
 $Label4.AutoSize                 = $true
 $Label4.width                    = 117
 $Label4.height                   = 25
 $Label4.location                 = New-Object System.Drawing.Point(761,252)
-$Label4.Font                     = New-Object System.Drawing.Font('Microsoft Sans Serif',24)
+$Label4.Font                     = New-Object System.Drawing.Font('Microsoft Sans Serif', 24)
+$Label4.ForeColor                = [System.Drawing.ColorTranslator]::FromHtml("$Red") # Red
 
 $securitylow                     = New-Object system.Windows.Forms.Button
 $securitylow.text                = "Low"
@@ -252,6 +295,7 @@ $securitylow.width               = 150
 $securitylow.height              = 30
 $securitylow.location            = New-Object System.Drawing.Point(36,119)
 $securitylow.Font                = New-Object System.Drawing.Font('Microsoft Sans Serif',15,[System.Drawing.FontStyle]([System.Drawing.FontStyle]::Bold))
+$securitylow.ForeColor           = [System.Drawing.ColorTranslator]::FromHtml("$White") # White
 
 $securityhigh                    = New-Object system.Windows.Forms.Button
 $securityhigh.text               = "High"
@@ -259,6 +303,7 @@ $securityhigh.width              = 150
 $securityhigh.height             = 30
 $securityhigh.location           = New-Object System.Drawing.Point(244,119)
 $securityhigh.Font               = New-Object System.Drawing.Font('Microsoft Sans Serif',15,[System.Drawing.FontStyle]([System.Drawing.FontStyle]::Bold))
+$securityhigh.ForeColor          = [System.Drawing.ColorTranslator]::FromHtml("$White") # White
 
 $Label5                          = New-Object system.Windows.Forms.Label
 $Label5.text                     = ""
@@ -267,6 +312,7 @@ $Label5.width                    = 150
 $Label5.height                   = 10
 $Label5.location                 = New-Object System.Drawing.Point(24,40)
 $Label5.Font                     = New-Object System.Drawing.Font('Microsoft Sans Serif',10)
+$Label5.ForeColor                = [System.Drawing.ColorTranslator]::FromHtml("$White") # White
 
 $Label6                          = New-Object system.Windows.Forms.Label
 $Label6.text                     = "- Disable Meltdown Flag"
@@ -275,6 +321,7 @@ $Label6.width                    = 150
 $Label6.height                   = 10
 $Label6.location                 = New-Object System.Drawing.Point(24,6)
 $Label6.Font                     = New-Object System.Drawing.Font('Microsoft Sans Serif',10)
+$Label6.ForeColor                = [System.Drawing.ColorTranslator]::FromHtml("$White") # White
 
 $Label7                          = New-Object system.Windows.Forms.Label
 $Label7.text                     = "- Set UAC to Never Prompt"
@@ -283,6 +330,7 @@ $Label7.width                    = 150
 $Label7.height                   = 10
 $Label7.location                 = New-Object System.Drawing.Point(24,23)
 $Label7.Font                     = New-Object System.Drawing.Font('Microsoft Sans Serif',10)
+$Label7.ForeColor                = [System.Drawing.ColorTranslator]::FromHtml("$White") # White
 
 $Label8                          = New-Object system.Windows.Forms.Label
 $Label8.text                     = ""
@@ -307,6 +355,7 @@ $Label10.width                   = 25
 $Label10.height                  = 10
 $Label10.location                = New-Object System.Drawing.Point(233,40)
 $Label10.Font                    = New-Object System.Drawing.Font('Microsoft Sans Serif',10)
+$Label10.ForeColor               = [System.Drawing.ColorTranslator]::FromHtml("$White") # White
 
 $Label11                         = New-Object system.Windows.Forms.Label
 $Label11.text                    = "- Enable Windows Defender"
@@ -315,6 +364,7 @@ $Label11.width                   = 25
 $Label11.height                  = 10
 $Label11.location                = New-Object System.Drawing.Point(233,57)
 $Label11.Font                    = New-Object System.Drawing.Font('Microsoft Sans Serif',10)
+$Label11.ForeColor               = [System.Drawing.ColorTranslator]::FromHtml("$White") # White
 
 $Label12                         = New-Object system.Windows.Forms.Label
 $Label12.text                    = "- Enable Windows Malware Scan"
@@ -323,6 +373,7 @@ $Label12.width                   = 25
 $Label12.height                  = 10
 $Label12.location                = New-Object System.Drawing.Point(233,6)
 $Label12.Font                    = New-Object System.Drawing.Font('Microsoft Sans Serif',10)
+$Label12.ForeColor               = [System.Drawing.ColorTranslator]::FromHtml("$White") # White
 
 $Label13                         = New-Object system.Windows.Forms.Label
 $Label13.text                    = "- Enable Meltdown Flag"
@@ -331,14 +382,16 @@ $Label13.width                   = 25
 $Label13.height                  = 10
 $Label13.location                = New-Object System.Drawing.Point(233,23)
 $Label13.Font                    = New-Object System.Drawing.Font('Microsoft Sans Serif',10)
+$Label13.ForeColor               = [System.Drawing.ColorTranslator]::FromHtml("$White") # White
 
 $Label15                         = New-Object system.Windows.Forms.Label
-$Label15.text                    = "Windows Update"
+$Label15.text                    = "WINDOWS UPDATE:"
 $Label15.AutoSize                = $true
 $Label15.width                   = 25
 $Label15.height                  = 10
 $Label15.location                = New-Object System.Drawing.Point(58,459)
 $Label15.Font                    = New-Object System.Drawing.Font('Calibri',24)
+$Label15.ForeColor               = [System.Drawing.ColorTranslator]::FromHtml("$Red") # Red
 
 $Panel4                          = New-Object system.Windows.Forms.Panel
 $Panel4.height                   = 168
@@ -351,6 +404,7 @@ $defaultwindowsupdate.width      = 300
 $defaultwindowsupdate.height     = 30
 $defaultwindowsupdate.location   = New-Object System.Drawing.Point(20,13)
 $defaultwindowsupdate.Font       = New-Object System.Drawing.Font('Microsoft Sans Serif',14)
+$defaultwindowsupdate.ForeColor  = [System.Drawing.ColorTranslator]::FromHtml("$White") # White
 
 $securitywindowsupdate           = New-Object system.Windows.Forms.Button
 $securitywindowsupdate.text      = "Security Updates Only"
@@ -358,6 +412,7 @@ $securitywindowsupdate.width     = 300
 $securitywindowsupdate.height    = 30
 $securitywindowsupdate.location  = New-Object System.Drawing.Point(20,119)
 $securitywindowsupdate.Font      = New-Object System.Drawing.Font('Microsoft Sans Serif',14)
+$securitywindowsupdate.ForeColor = [System.Drawing.ColorTranslator]::FromHtml("$White") # White
 
 $Label16                         = New-Object system.Windows.Forms.Label
 $Label16.text                    = "I recommend doing security updates only."
@@ -366,6 +421,7 @@ $Label16.width                   = 25
 $Label16.height                  = 10
 $Label16.location                = New-Object System.Drawing.Point(47,49)
 $Label16.Font                    = New-Object System.Drawing.Font('Microsoft Sans Serif',10)
+$Label16.ForeColor               = [System.Drawing.ColorTranslator]::FromHtml("$White") # White
 
 $Label17                         = New-Object system.Windows.Forms.Label
 $Label17.text                    = "- Delays Features updates up to 3 years"
@@ -374,6 +430,7 @@ $Label17.width                   = 25
 $Label17.height                  = 10
 $Label17.location                = New-Object System.Drawing.Point(71,66)
 $Label17.Font                    = New-Object System.Drawing.Font('Microsoft Sans Serif',10)
+$Label17.ForeColor               = [System.Drawing.ColorTranslator]::FromHtml("$White") # White
 
 $Label18                         = New-Object system.Windows.Forms.Label
 $Label18.text                    = "- Delays Security updates 4 days"
@@ -382,6 +439,7 @@ $Label18.width                   = 25
 $Label18.height                  = 10
 $Label18.location                = New-Object System.Drawing.Point(71,84)
 $Label18.Font                    = New-Object System.Drawing.Font('Microsoft Sans Serif',10)
+$Label18.ForeColor               = [System.Drawing.ColorTranslator]::FromHtml("$White") # White
 
 $Label19                         = New-Object system.Windows.Forms.Label
 $Label19.text                    = "- Sets Maximum Active Time"
@@ -390,14 +448,16 @@ $Label19.width                   = 25
 $Label19.height                  = 10
 $Label19.location                = New-Object System.Drawing.Point(71,103)
 $Label19.Font                    = New-Object System.Drawing.Font('Microsoft Sans Serif',10)
+$Label19.ForeColor               = [System.Drawing.ColorTranslator]::FromHtml("$White") # White
 
 $Label20                         = New-Object system.Windows.Forms.Label
-$Label20.text                    = "Instructions"
+$Label20.text                    = "INSTRUCTIONS:"
 $Label20.AutoSize                = $true
 $Label20.width                   = 169
 $Label20.height                  = 23
 $Label20.location                = New-Object System.Drawing.Point(581,463)
 $Label20.Font                    = New-Object System.Drawing.Font('Microsoft Sans Serif',24)
+$Label20.ForeColor               = [System.Drawing.ColorTranslator]::FromHtml("$Red") # Red
 
 $Label21                         = New-Object system.Windows.Forms.Label
 $Label21.text                    = "- This will modify your system and I highly recommend backing up any data you have prior to running!"
@@ -406,6 +466,7 @@ $Label21.width                   = 150
 $Label21.height                  = 10
 $Label21.location                = New-Object System.Drawing.Point(390,507)
 $Label21.Font                    = New-Object System.Drawing.Font('Microsoft Sans Serif',10)
+$Label21.ForeColor               = [System.Drawing.ColorTranslator]::FromHtml("$White") # White
 
 $Label22                         = New-Object system.Windows.Forms.Label
 $Label22.text                    = "(Unsure!?... Just apply Essential Tweaks)"
@@ -426,9 +487,19 @@ $Label23.Font                    = New-Object System.Drawing.Font('Microsoft San
 $PictureBox1                     = New-Object system.Windows.Forms.PictureBox
 $PictureBox1.width               = 412
 $PictureBox1.height              = 125
-$PictureBox1.location            = New-Object System.Drawing.Point(449,541)
+$PictureBox1.location            = New-Object System.Drawing.Point(500,541)
 $PictureBox1.imageLocation       = "http://deepsixsecurity.com/wp-content/uploads/2021/06/Sheild-DSS.png"
 $PictureBox1.SizeMode            = [System.Windows.Forms.PictureBoxSizeMode]::zoom
+
+$Label24                         = New-Object system.Windows.Forms.Label
+$Label24.text                    = "www.deepsixsecurity.com"
+$Label24.AutoSize                = $true
+$Label24.width                   = 150
+$Label24.height                  = 10
+$Label24.location                = New-Object System.Drawing.Point(581,700)
+$Label24.Font                    = New-Object System.Drawing.Font('Microsoft Sans Serif',15,[System.Drawing.FontStyle]([System.Drawing.FontStyle]::Bold))
+$Label24.ForeColor               = [System.Drawing.ColorTranslator]::FromHtml("$White") # White
+
 $lightmode                       = New-Object system.Windows.Forms.Button
 $lightmode.text                  = "Light Mode"
 $lightmode.width                 = 150
@@ -436,7 +507,7 @@ $lightmode.height                = 30
 $lightmode.location              = New-Object System.Drawing.Point(417,45)
 $lightmode.Font                  = New-Object System.Drawing.Font('Microsoft Sans Serif',12)
 
-$Form.controls.AddRange(@($Panel1,$Label1,$Panel2,$Label3,$Panel3,$Label4,$Label15,$Panel4,$Label20,$Label21,$Label23,$PictureBox1))
+$Form.controls.AddRange(@($Panel1,$Label1,$Panel2,$Label3,$Panel3,$Label4,$Label15,$Panel4,$Label20,$Label21,$Label23,$PictureBox1,$Label24))
 $Panel1.controls.AddRange(@($installchoco,$brave,$firefox,$7zip,$zoom,$adobereader,$notepad,$gchrome,$mpc,$vlc,$powertoys,$winterminal,$vscode,$malwarebytes,$office365,$openoffice,$Label2))
 $Panel2.controls.AddRange(@($essentialtweaks,$backgroundapps,$cortana,$windowssearch,$actioncenter,$darkmode,$visualfx,$onedrive,$Label22,$lightmode))
 $Panel3.controls.AddRange(@($securitylow,$securityhigh,$Label5,$Label6,$Label7,$Label8,$Label9,$Label10,$Label11,$Label12,$Label13))
