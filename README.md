@@ -1,6 +1,8 @@
 # DSS Windows 10 Debloater 2021
 Windows 10 Debloater and Installer Script from a creation of multiple debloat scripts and gists from github. I also added Chocolatey and other various software and tools to the script that I install on every machine. I will be continually updating this in the future. 
 
+# Instructions:
+
 ## Version 1.09
 
 - Dark Mode
