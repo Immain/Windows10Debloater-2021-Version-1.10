@@ -40,8 +40,8 @@ If (!([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]:
 }
 
 $Form                            = New-Object system.Windows.Forms.Form
-$Form.ClientSize                 = New-Object System.Drawing.Point(1200,750)
-$Form.text                       = "DSS Application Installer"
+$Form.ClientSize                 = New-Object System.Drawing.Point(1200,810)
+$Form.text                       = "DSS Application Installer Version 1.10"
 $Form.TopMost                    = $false
 $Form.BackColor                  = [System.Drawing.ColorTranslator]::FromHtml("$WinDark")
 
@@ -197,7 +197,7 @@ $Label2.Font                     = New-Object System.Drawing.Font('Microsoft San
 $Label2.ForeColor                = [System.Drawing.ColorTranslator]::FromHtml("$White") # White
 
 $Panel2                          = New-Object system.Windows.Forms.Panel
-$Panel2.height                   = 159
+$Panel2.height                   = 185
 $Panel2.width                    = 588
 $Panel2.location                 = New-Object System.Drawing.Point(9,293)
 $Panel2.ForeColor                = [System.Drawing.ColorTranslator]::FromHtml("$White") # White
@@ -251,13 +251,13 @@ $actioncenter.location           = New-Object System.Drawing.Point(251,9)
 $actioncenter.Font               = New-Object System.Drawing.Font('Microsoft Sans Serif',12)
 $actioncenter.ForeColor          = [System.Drawing.ColorTranslator]::FromHtml("$White") # White
 
-$darkmode                        = New-Object system.Windows.Forms.Button
-$darkmode.text                   = "Dark Mode"
-$darkmode.width                  = 150
-$darkmode.height                 = 30
-$darkmode.location               = New-Object System.Drawing.Point(417,7)
-$darkmode.Font                   = New-Object System.Drawing.Font('Microsoft Sans Serif',12)
-$darkmode.ForeColor              = [System.Drawing.ColorTranslator]::FromHtml("$White") # White
+$appdarkmode                     = New-Object system.Windows.Forms.Button
+$appdarkmode.text                = "App Dark Mode"
+$appdarkmode.width               = 150
+$appdarkmode.height              = 30
+$appdarkmode.location            = New-Object System.Drawing.Point(417,7)
+$appdarkmode.Font                = New-Object System.Drawing.Font('Microsoft Sans Serif',12)
+$appdarkmode.ForeColor           = [System.Drawing.ColorTranslator]::FromHtml("$White") # White
 
 $visualfx                        = New-Object system.Windows.Forms.Button
 $visualfx.text                   = "Visual FX"
@@ -285,7 +285,7 @@ $Label4.text                     = "SECURITY:"
 $Label4.AutoSize                 = $true
 $Label4.width                    = 117
 $Label4.height                   = 25
-$Label4.location                 = New-Object System.Drawing.Point(761,252)
+$Label4.location                 = New-Object System.Drawing.Point(735,252)
 $Label4.Font                     = New-Object System.Drawing.Font('Microsoft Sans Serif', 24)
 $Label4.ForeColor                = [System.Drawing.ColorTranslator]::FromHtml("$Red") # Red
 
@@ -389,14 +389,14 @@ $Label15.text                    = "WINDOWS UPDATE:"
 $Label15.AutoSize                = $true
 $Label15.width                   = 25
 $Label15.height                  = 10
-$Label15.location                = New-Object System.Drawing.Point(58,459)
+$Label15.location                = New-Object System.Drawing.Point(50,515)
 $Label15.Font                    = New-Object System.Drawing.Font('Calibri',24)
 $Label15.ForeColor               = [System.Drawing.ColorTranslator]::FromHtml("$Red") # Red
 
 $Panel4                          = New-Object system.Windows.Forms.Panel
 $Panel4.height                   = 168
 $Panel4.width                    = 340
-$Panel4.location                 = New-Object System.Drawing.Point(9,491)
+$Panel4.location                 = New-Object System.Drawing.Point(9,550)
 
 $defaultwindowsupdate            = New-Object system.Windows.Forms.Button
 $defaultwindowsupdate.text       = "Default Settings"
@@ -455,7 +455,7 @@ $Label20.text                    = "INSTRUCTIONS:"
 $Label20.AutoSize                = $true
 $Label20.width                   = 169
 $Label20.height                  = 23
-$Label20.location                = New-Object System.Drawing.Point(581,463)
+$Label20.location                = New-Object System.Drawing.Point(581,500)
 $Label20.Font                    = New-Object System.Drawing.Font('Microsoft Sans Serif',24)
 $Label20.ForeColor               = [System.Drawing.ColorTranslator]::FromHtml("$Red") # Red
 
@@ -464,7 +464,7 @@ $Label21.text                    = "- This will modify your system and I highly 
 $Label21.AutoSize                = $true
 $Label21.width                   = 150
 $Label21.height                  = 10
-$Label21.location                = New-Object System.Drawing.Point(390,507)
+$Label21.location                = New-Object System.Drawing.Point(405,565)
 $Label21.Font                    = New-Object System.Drawing.Font('Microsoft Sans Serif',10)
 $Label21.ForeColor               = [System.Drawing.ColorTranslator]::FromHtml("$White") # White
 
@@ -487,7 +487,7 @@ $Label23.Font                    = New-Object System.Drawing.Font('Microsoft San
 $PictureBox1                     = New-Object system.Windows.Forms.PictureBox
 $PictureBox1.width               = 412
 $PictureBox1.height              = 125
-$PictureBox1.location            = New-Object System.Drawing.Point(500,541)
+$PictureBox1.location            = New-Object System.Drawing.Point(500,600)
 $PictureBox1.imageLocation       = "http://deepsixsecurity.com/wp-content/uploads/2021/06/Sheild-DSS.png"
 $PictureBox1.SizeMode            = [System.Windows.Forms.PictureBoxSizeMode]::zoom
 
@@ -496,20 +496,34 @@ $Label24.text                    = "www.deepsixsecurity.com"
 $Label24.AutoSize                = $true
 $Label24.width                   = 150
 $Label24.height                  = 10
-$Label24.location                = New-Object System.Drawing.Point(581,700)
+$Label24.location                = New-Object System.Drawing.Point(581,750)
 $Label24.Font                    = New-Object System.Drawing.Font('Microsoft Sans Serif',15,[System.Drawing.FontStyle]([System.Drawing.FontStyle]::Bold))
 $Label24.ForeColor               = [System.Drawing.ColorTranslator]::FromHtml("$White") # White
 
-$lightmode                       = New-Object system.Windows.Forms.Button
-$lightmode.text                  = "Light Mode"
-$lightmode.width                 = 150
-$lightmode.height                = 30
-$lightmode.location              = New-Object System.Drawing.Point(417,45)
-$lightmode.Font                  = New-Object System.Drawing.Font('Microsoft Sans Serif',12)
+$applightmode                    = New-Object system.Windows.Forms.Button
+$applightmode.text               = "App Light Mode"
+$applightmode.width              = 150
+$applightmode.height             = 30
+$applightmode.location           = New-Object System.Drawing.Point(417,45)
+$applightmode.Font               = New-Object System.Drawing.Font('Microsoft Sans Serif',12)
+
+$systemlightmode                 = New-Object system.Windows.Forms.Button
+$systemlightmode.text            = "System Light"
+$systemlightmode.width           = 150
+$systemlightmode.height          = 30
+$systemlightmode.location        = New-Object System.Drawing.Point(417,155)
+$systemlightmode.Font            = New-Object System.Drawing.Font('Microsoft Sans Serif',12)
+
+$systemdarkmode                 = New-Object system.Windows.Forms.Button
+$systemdarkmode.text            = "System Dark"
+$systemdarkmode.width           = 150
+$systemdarkmode.height          = 30
+$systemdarkmode.location        = New-Object System.Drawing.Point(251,155)
+$systemdarkmode.Font            = New-Object System.Drawing.Font('Microsoft Sans Serif',12)
 
 $Form.controls.AddRange(@($Panel1,$Label1,$Panel2,$Label3,$Panel3,$Label4,$Label15,$Panel4,$Label20,$Label21,$Label23,$PictureBox1,$Label24))
 $Panel1.controls.AddRange(@($installchoco,$brave,$firefox,$7zip,$zoom,$adobereader,$notepad,$gchrome,$mpc,$vlc,$powertoys,$winterminal,$vscode,$malwarebytes,$office365,$openoffice,$Label2))
-$Panel2.controls.AddRange(@($essentialtweaks,$backgroundapps,$cortana,$windowssearch,$actioncenter,$darkmode,$visualfx,$onedrive,$Label22,$lightmode))
+$Panel2.controls.AddRange(@($essentialtweaks,$backgroundapps,$cortana,$windowssearch,$actioncenter,$appdarkmode,$visualfx,$onedrive,$Label22,$applightmode,$systemdarkmode,$systemlightmode))
 $Panel3.controls.AddRange(@($securitylow,$securityhigh,$Label5,$Label6,$Label7,$Label8,$Label9,$Label10,$Label11,$Label12,$Label13))
 $Panel4.controls.AddRange(@($defaultwindowsupdate,$securitywindowsupdate,$Label16,$Label17,$Label18,$Label19))
 
@@ -1081,16 +1095,28 @@ $onedrive.Add_Click({
     Write-Host "Disabled OneDrive"
 })
 
-$darkmode.Add_Click({
+$appdarkmode.Add_Click({
     Write-Host "Enabling Dark Mode"
     Set-ItemProperty -Path HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Themes\Personalize -Name AppsUseLightTheme -Value 0
     Write-Host "Enabled Dark Mode"
 })
 
-$lightmode.Add_Click({
+$applightmode.Add_Click({
     Write-Host "Switching Back to Light Mode"
     Remove-ItemProperty -Path HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Themes\Personalize -Name AppsUseLightTheme
     Write-Host "Switched Back to Light Mode"
+})
+
+$systemlightmode.Add_Click({
+    Write-Host "Switching Back to Light Mode"
+    Set-ItemProperty -Path HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Themes\Personalize -Name SystemUsesLightTheme -Value 1 -Force
+    Write-Host "Switched Back to Light Mode"
+})
+
+$systemdarkmode.Add_Click({
+    Write-Host "Enabling System Dark Mode"
+    Set-ItemProperty -Path HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Themes\Personalize -Name SystemUsesLightTheme -Value 0 -Force
+    Write-Host "Enabled System Dark Mode"
 })
 
 [void]$Form.ShowDialog()
