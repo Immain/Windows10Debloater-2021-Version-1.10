@@ -2,7 +2,7 @@
 Windows 10 Debloater and Installer Script from a creation of multiple debloat scripts and gists from github. I also added Chocolatey and other various software and tools to the script that I install on every machine. I will be continually updating this in the future. 
 
 # Instructions:
-- Before running any of these tools, always make a backup of your system. I assume no responsibility from damaged systems
+- This will modify your system and I highly recommend backing up any data you have prior to running! Before running any of these tools, always make a backup of your system. I assume no responsibility from damaged systems
 - Chocolatey is a software management solution unlike anything else you've ever experienced on Windows. Chocolatey brings the concepts of true package management to allow you to version things, manage dependencies and installation order, better inventory management, and other features.
 - O&O ShutUp10 means you have full control over which comfort functions under Windows 10 you wish to use, and you decide when the passing on of your data goes too far. Using a very simple interface, you decide how Windows 10 should respect your privacy by deciding which unwanted functions should be deactivated.
 
