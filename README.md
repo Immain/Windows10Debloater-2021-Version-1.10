@@ -10,8 +10,8 @@ Windows 10 Debloater and Installer Script from a creation of multiple debloat sc
 - When you download the Windows 10 Debloater, extract the files somewhere that will be easy to remember. 
 - Next, open Windows Powershell as an Administrator and click "yes"
 - Using the command here, cd C:\Path\To\File
-- Once inside the file use this command cd .\Windows10Debloater-2021-Version-1.10\ to navigate to the script folder.
-- To run the script, use .\
+- Once inside the file use this command "cd .\Windows10Debloater-2021-Version-1.10-main\" to navigate to the script folder.
+- To run the script, use ".\DSSWin10Debloat2021.ps1" to run the application. 
 
 ## Version 1.09
 
