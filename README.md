@@ -19,5 +19,5 @@ Windows 10 Debloater and Installer Script from a creation of multiple debloat sc
 - Fixed an issue with spacing
 
 ## Screenshot
-![image](https://github.com/Immain/Windows10Debloater-2021-Updated/blob/main/Images/DSS-App-Screenshot.PNG)
+![image](https://github.com/Immain/Windows10Debloater-2021-Updated/blob/main/Images/V110.PNG)
 
